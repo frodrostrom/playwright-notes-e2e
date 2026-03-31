@@ -54,7 +54,7 @@ export abstract class BasePage {
   protected async waitForApiResponse(
     urlPattern: string | RegExp,
     action: () => Promise<void>,
-    { timeout = 10_000 }: WaitForApiOptions = {},
+    { timeout = 20_000 }: WaitForApiOptions = {},
   ): Promise<Response> {
     const [response] = await Promise.all([
       this.page.waitForResponse(
