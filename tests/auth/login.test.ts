@@ -36,14 +36,12 @@ test.describe('Session injection @smoke', () => {
   test('alice is already logged in via injected session', async ({ page, assert }) => {
     await page.goto(BASE_URL);
     await page.waitForLoadState('domcontentloaded');
-    await page.waitForTimeout(1000);
     await assert.toBeLoggedIn();
   });
 
   test('alice username visible in nav / profile', async ({ page }) => {
     await page.goto(`${BASE_URL}/profile`);
     await page.waitForLoadState('domcontentloaded');
-    await page.waitForTimeout(1000);
     const nameField = page.locator('[data-testid="user-name"]');
     await expect(nameField).toBeVisible();
     // The field may be an input or a text node; check the value/text contains alice's name
