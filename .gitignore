@@ -1,0 +1,9 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+
+# Auth state files — never commit tokens
+sessions/
+
+.env
